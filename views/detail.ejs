@@ -46,7 +46,7 @@
       <div class="searchBar">
 
         <form action="/search" method="GET">
-          <input type="text" name="movieTitle" class="search" placeholder="Search for other Movie?"> <!-- Added searchTerm value -->
+          <input type="text" name="movieTitle" class="search" autofocus placeholder="Search for other Movie?"> <!-- Added searchTerm value -->
           <input type="submit" class="submit">
         </form>
 
@@ -55,7 +55,7 @@
       <div class="results">
         <div class="detailContainer">
           <!-- If Poster is Not Avaliable don't put out image -->
-          <% if (detailList.Poster != 'N/A') { %> ] 
+          <% if (detailList.Poster != 'N/A') { %> 
               <img src="<%= detailList.Poster %>" alt="" style="float: right; height: 50%;">
           <% } %>
           <h1><%= detailList.Title%></h1>

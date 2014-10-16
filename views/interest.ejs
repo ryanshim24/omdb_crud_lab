@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Interests Page</title>
+    <title>Favorites Page</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -46,7 +46,7 @@
       <div class="searchBar">
 
         <form action="/search" method="GET">
-          <input type="text" name="movieTitle" placeholder="Search for other movie?" class="search"> <!-- Added searchTerm value -->
+          <input type="text" name="movieTitle" autofocus placeholder="Search for other movie?" class="search"> <!-- Added searchTerm value -->
           <input type="submit" class="submit">
         </form>
     </div>
@@ -61,22 +61,24 @@
           <h3>Search for some movies!!!</h3>
         </div>
       <% } else { %>
-        <h1>Movies I'm Interested In!</h1>
-        <ul>
-          <% interestMovies.forEach(function(list){ %>
-            <li class="movie cf">
-            <!-- Prints out the interested title name -->
-              <div class="title"><%=list.title%></div>
-              <!-- Pushes the delete button to the right -->
-              <!-- Overides post with delete -->
-              <form action="/interested/<%= list.id %>
-              ?_method=delete" method="post">
-                <button type="submit" class="btn btn-primary pull-right">Delete?</button>
-              </form>
-            </li>
-          <% }); %>
-        <% } %>
-        </ul>
+        <div class= "interestMovies">
+          <h1>Movies I'm Interested In!</h1>
+          <ul>
+            <% interestMovies.forEach(function(list){ %>
+              <li class="movie cf">
+              <!-- Prints out the interested title name -->
+                <div class="title"><%=list.title%></div>
+                <!-- Pushes the delete button to the right -->
+                <!-- Overides post with delete -->
+                <form action="/interested/<%= list.id %>
+                ?_method=delete" method="post">
+                  <button type="submit" class="btn btn-danger pull-right">Delete</button>
+                </form>
+              </li>
+            <% }); %>
+          <% } %>
+          </ul>
+        </div>
       </div>
     </div>
   

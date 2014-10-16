@@ -125,6 +125,7 @@ ul { /* Resets given margins and padding */
   padding: 5px 24px;
 }
 
+
 .noMovies { /* In interested page give's it nice padding */
   padding-top: 20px;
 }
@@ -137,7 +138,10 @@ ul { /* Resets given margins and padding */
   color: white;
   text-shadow:1px 1px rgba(51,51,51,.5);
   padding: 145px;
+}
 
+.results .interestMovies h1 {
+  padding: 10px 24px;
 }
 
 /* Some css to readjust my static about and contact page */
@@ -145,9 +149,7 @@ ul { /* Resets given margins and padding */
   margin:0;
   width: calc(100% - 5px);
 }
-.results h1 {
-  padding: 5px 24px;
-}
+
 
 .results .boss img {
   display: inline-block;
