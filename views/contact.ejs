@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Detailed Page</title>
+    <title>Home Page</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -46,41 +46,31 @@
       <div class="searchBar">
 
         <form action="/search" method="GET">
-          <input type="text" name="movieTitle" class="search" placeholder="Search for other Movie?"> <!-- Added searchTerm value -->
+          <input type="text" name="movieTitle" placeholder="Search for other movie?" class="search"> 
           <input type="submit" class="submit">
         </form>
-
-      </div>
+    </div>
       
       <div class="results">
-        <div class="detailContainer">
-          <% if (detailList.Poster != 'N/A') { %>
-              <img src="<%= detailList.Poster %>" alt="" style="float: right; height: 50%;">
-          <% } %>
-          <h1><%= detailList.Title%></h1>
-          <h3>Year: <%= detailList.Year %></h3>
-          <br>
-          <p>Rated: <%= detailList.Rated%></p>
-          <p>Released: <%= detailList.Released%></p>
-          <p>Runtime: <%= detailList.Runtime%></p>
-          <p>Genre: <%= detailList.Genre%></p>
-          <p>Director: <%= detailList.Director%></p>
-          <p>Writer: <%= detailList.Writer%></p>
-          <p>Actors: <%= detailList.Actors%></p>
-          <p>Plot: <%= detailList.Plot%></p>
-          <p>Language: <%= detailList.Language%></p>
-          <p>Country: <%= detailList.Country%></p>
-          <p>Awards: <%= detailList.Awards%></p>
-          <p>Imdb Rating: <%= detailList.imdbRating%></p>
-
-          <form action="/interested" method="POST">
-            <input name="movie[title]" value="<%= detailList.Title%>" type="hidden">
-           <button type="submit" class="btn btn-primary">I'm Interested!</button>
-          </form>
+        <div class="container contact">
+          <h2 class="page-header">Contact Me
+            <small>Wanna get hired?</small>
+          </h2>
+          <h4 class="text-center">Think you have what it takes to work HERE!</h4>
+          <p class="lead text-center">Well... Here are my contacts</p>
+        <hr>
+          <h3> RESUMES?</h3>
+          <p>GOT an awesome resume you want me to THROW AWAY, please email me at:</p>
+          <p><strong><a href="mailto:ryanshim92@gmail.com">ryanshim92@gmail.com</a></strong></p>
+          <h3>Linkedin?</h3>
+          <p>TRYING to connect with me on LINKEDIN?? Only to get REJECTED!! Please connect with me at:</p>
+          <p><strong><a href="https://www.linkedin.com/pub/ryan-shim/97/b12/863">https://www.linkedin.com/pub/ryan-shim/97/b12/863</a></strong></p>
+          <h3><i class="fa fa-code"></i> FACEBOOK?!</h3>
+          <p>JUST wanna be friends???? Only to get IGNORED? Please add me at:</p>
+          <p><strong><a href="https://www.facebook.com/ryan.shim.7">https://www.facebook.com/ryan.shim.7</a></strong></p>
         </div>
       </div>
-    </div>
-        
 
 </body>
+
 </html>

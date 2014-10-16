@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Detailed Page</title>
+    <title>Home Page</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -46,41 +46,38 @@
       <div class="searchBar">
 
         <form action="/search" method="GET">
-          <input type="text" name="movieTitle" class="search" placeholder="Search for other Movie?"> <!-- Added searchTerm value -->
+          <input type="text" name="movieTitle" placeholder="Search for other movie?" class="search"> 
           <input type="submit" class="submit">
         </form>
+    </div>
 
-      </div>
-      
+
       <div class="results">
-        <div class="detailContainer">
-          <% if (detailList.Poster != 'N/A') { %>
-              <img src="<%= detailList.Poster %>" alt="" style="float: right; height: 50%;">
-          <% } %>
-          <h1><%= detailList.Title%></h1>
-          <h3>Year: <%= detailList.Year %></h3>
-          <br>
-          <p>Rated: <%= detailList.Rated%></p>
-          <p>Released: <%= detailList.Released%></p>
-          <p>Runtime: <%= detailList.Runtime%></p>
-          <p>Genre: <%= detailList.Genre%></p>
-          <p>Director: <%= detailList.Director%></p>
-          <p>Writer: <%= detailList.Writer%></p>
-          <p>Actors: <%= detailList.Actors%></p>
-          <p>Plot: <%= detailList.Plot%></p>
-          <p>Language: <%= detailList.Language%></p>
-          <p>Country: <%= detailList.Country%></p>
-          <p>Awards: <%= detailList.Awards%></p>
-          <p>Imdb Rating: <%= detailList.imdbRating%></p>
-
-          <form action="/interested" method="POST">
-            <input name="movie[title]" value="<%= detailList.Title%>" type="hidden">
-           <button type="submit" class="btn btn-primary">I'm Interested!</button>
-          </form>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="page-header">About ME
+                    <small>It's Nice to Meet You!</small>
+                </h2>
+                <h4>Wanna Know about the most awesome boss you'll ever lay eyes on?</h3>
+                <p class="lead">Well... take a look below!!</p>
+            </div>
+        </div>
+        <div class="row text-center boss">
+            <div class="col-lg-12">
+                <h3>THE BOSS</h3>
+            </div>
+            <div class="col-lg-12 col-sm-12 text-center">
+                <img class="img-circle img-responsive img-center" src="/images/me.jpg" alt="">
+                <h4>Ryan Shim
+                    <small>BOSS</small>
+                </h4>
+                <p>Gives you the very best.... GUARANTEEE</p>
+                <p>No other information needed...</p>
+            </div>
+           
         </div>
       </div>
-    </div>
-        
 
 </body>
+
 </html>

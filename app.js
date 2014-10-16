@@ -15,12 +15,13 @@ var moviesList = [];
 var idCounter = 1;
 
 
-
+//Home
 app.get('/', function(req, res){
   res.render('index.ejs');
 });
 
 
+//New
 app.get('/search', function(req, res){
 
   var searchTerm = req.query.movieTitle;
@@ -29,11 +30,15 @@ app.get('/search', function(req, res){
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       var obj = JSON.parse(body);
-      res.render("results.ejs", {movieList: obj.Search});
+      res.render("results.ejs", {movieList: obj.Search, searchTerm: searchTerm});
+      //Pushed in another key value SearchTerm so my searchbar retains the searched item
     }
   });
 });
 
+
+
+//New
 app.get('/details/:id', function(req,res) { 
   var detailTerm = req.params.id;
   var url ="http://www.omdbapi.com/?i=" + detailTerm;
@@ -47,11 +52,17 @@ app.get('/details/:id', function(req,res) {
 });
 
 
+
+
+//Show
 app.get('/interested', function(req,res) { 
   res.render('interest.ejs',{interestMovies: moviesList});
 });
 
 
+
+
+//Create
 app.post('/interested', function(req,res) { 
   var newTitle = {};
   newTitle.id = idCounter;
@@ -61,6 +72,10 @@ app.post('/interested', function(req,res) {
   res.redirect('/interested');
 });
 
+
+
+
+//Destory
 app.delete('/interested/:id', function(req,res) { 
   console.log("DELETE ROUTE");
   var id = Number(req.params.id);
@@ -75,6 +90,24 @@ app.delete('/interested/:id', function(req,res) {
   });
   res.redirect('/interested');
 });
+
+
+
+app.get('/about', function(req,res) { //My about page
+  res.render('about.ejs');
+});
+
+app.get('/contact', function(req, res) { // My contact page
+  res.render('contact.ejs');
+});
+
+
+
+
+
+
+
+
 
 
 

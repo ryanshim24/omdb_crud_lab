@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Search Page</title>
+    <title>Search Results Page</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -17,45 +17,57 @@
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
   
   </head>
+
   <body>
-  <div class="navbar navbar-inverse navbar-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-            <a class="navbar-brand" href="/">Daily Planet</a>
-          </div>
-          <div class="navbar-collapse collapse" style="height: 1px;">
-            <ul class = "nav navbar-nav navbar-right">
-              <li class="active"><a href="/">Home</a></li>
-              <li><a href="/articles">Articles</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-            </ul>
-         </div>
+    <div class="sideBar"> 
+      <div class="logoContainer">
+        <div class="logo">
+          M
         </div>
+        <div class="appName">
+          Movie Searcher
+        </div>
+      </div>
+      <div class="linkContainer">
+        <ul>
+          <a href="/"><li>Home</li></a>
+          <a href="/interested"><li>Favorites</li></a>
+          <a href="/contact"><li>Contact Me</li></a>
+          <a href="/about"><li>About Me</li></a>
+        </ul>
+      </div>
+      <footer>
+        © Ryan's Awesome 2014
+      </footer>
     </div>
-      <% movieList.forEach(function (film) {%>
-       
-        <% if (film.Type === "movie") { %>
-          <div class="container text-center search">
-            <h1><a href="/details/<%=film.imdbID%>"><%=film.Title%></a></h1>
-            <h4><%= film.Year %></h4>
-            <br>
-          </div>
-        <% } %>
-      <% }) %>
 
-      <hr>
-  
-   <footer>
-        <p>© Ryan's Awesome 2014</p>
-    </footer>
 
-  
+    <div class="content">
+      <div class="searchBar">
+
+        <form action="/search" method="GET">
+          <input type="text" name="movieTitle" value="<%= searchTerm %>" class="search"> <!-- Added searchTerm value -->
+          <input type="submit" class="submit">
+        </form>
+
+      </div>
+      
+      <div class="results">
+        <ul>
+          <% movieList.forEach(function(list){ %>
+            <a href="/details/<%=list.imdbID%>">
+              <li class="movie cf">
+                <div class="title"><%= list.Title %></div>
+                <div class="year"><%= list.Year %></div>
+              </li>
+            </a>
+          <% }); %>
+        </ul>
+      </div>
+        
+
+    </div>
+
+
   </body>
 </html>
