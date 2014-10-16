@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Search Page</title>
+    <title>Specific Detail Page</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
   
   </head>
+
   <body>
-  <div class="navbar navbar-inverse navbar-top" role="navigation">
+
+    <div class="navbar navbar-inverse navbar-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <a class="navbar-brand" href="/">Daily Planet</a>
+            <a class="navbar-brand pull-left" href="/">Movies?</a>
           </div>
           <div class="navbar-collapse collapse" style="height: 1px;">
             <ul class = "nav navbar-nav navbar-right">
@@ -39,23 +41,32 @@
          </div>
         </div>
     </div>
-      <% movieList.forEach(function (film) {%>
-       
-        <% if (film.Type === "movie") { %>
-          <div class="container text-center search">
-            <h1><a href="/details/<%=film.imdbID%>"><%=film.Title%></a></h1>
-            <h4><%= film.Year %></h4>
-            <br>
-          </div>
-        <% } %>
-      <% }) %>
+    <div class="container">
+        <h1><%= detailList.Title%></h1>
+        <h3>Year: <%= detailList.Year %></h3>
+        <br>
+        <p>Rated: <%= detailList.Rated%></p>
+        <p>Released: <%= detailList.Released%></p>
+        <p>Runtime: <%= detailList.Runtime%></p>
+        <p>Genre: <%= detailList.Genre%></p>
+        <p>Director: <%= detailList.Director%></p>
+        <p>Writer: <%= detailList.Writer%></p>
+        <p>Actors: <%= detailList.Actors%></p>
+        <p>Plot: <%= detailList.Plot%></p>
+        <p>Language: <%= detailList.Language%></p>
+        <p>Country: <%= detailList.Country%></p>
+        <p>Awards: <%= detailList.Awards%></p>
+        <p>Imdb Rating: <%= detailList.imdbRating%></p>
 
-      <hr>
-  
-   <footer>
+      <form action="/interested" method="POST">
+        <input name="movie[title]" value="<%= detailList.Title%>" type="hidden">
+       <button type="submit" class="btn btn-primary">I'm Interested!</button>
+      </form>
+    </div>
+    <hr>
+     <footer>
         <p>© Ryan's Awesome 2014</p>
     </footer>
 
-  
-  </body>
+</body>
 </html>

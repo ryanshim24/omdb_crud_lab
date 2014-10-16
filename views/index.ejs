@@ -1,14 +1,74 @@
-<!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>OMDB API Example</title>
+    <meta charset="utf-8">
+    
+    <title>Home Page</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  
   </head>
+
   <body>
-    <!-- action is the URL we send our data to -->
-    <!-- method is the HTTP verb (e.g., GET, POST) -->
-    <form action="/search" method="GET">
-      <input type="text" name="movieTitle">
-      <input type="submit">
-    </form>
+
+    <div class="navbar navbar-inverse navbar-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand pull-left" href="/">Movies?</a>
+          </div>
+          <div class="navbar-collapse collapse" style="height: 1px;">
+            <ul class = "nav navbar-nav navbar-right">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/articles">Articles</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+         </div>
+        </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome, Movie Lovers!!!</h1>
+        <p>Looking for a movie your itching to watch. WE GIVE YOU INFORMATION YOU NEED.</p>
+        <br>
+        <p>Search Movie:</p>
+        <form action="/search" method="GET">
+          <input type="text" name="movieTitle">
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+
+    <footer>
+        <p>© Ryan's Awesome 2014</p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  
+
   </body>
 </html>
