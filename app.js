@@ -40,9 +40,9 @@ app.get('/search', function(req, res){ //Routes to search page
 
 //New
 app.get('/details/:id', function(req,res) { //Routing to specific movie page
-  var detailTerm = req.params.id; //Grabs the id of what we call back in this case /details/imbdID number
+  var detailTerm = req.params.id; //Grabs the id of what we call back in this case /details/imbdID number from link wrap
   var url ="http://www.omdbapi.com/?i=" + detailTerm;
-  // We now get the information from the id api to get more info
+  // We now get the information from the id api to get more info abou that specific movie
   request(url, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       var obj1 = JSON.parse(body);
@@ -64,11 +64,14 @@ app.get('/interested', function(req,res) { //Routing to interested page
 
 //Create
 app.post('/interested', function(req,res) {  //from my submit in detail page we now could route to our interested page
+  
   var newTitle = {}; //Create a new obj newTitle
+  newTitle.imdbID = req.body.movie.imdbID;
   newTitle.id = idCounter;//create a property id for the Movie id
   newTitle.title = req.body.movie.title;//Grab the name of the input value so we can add it to the name property
   moviesList.push(newTitle); //Push this obj into the moviesList array for the interested movies
   idCounter++; //Increment the counter so next movie would be Movie id 2
+  console.log(req.body.movie);
   res.redirect('/interested'); //Go to interested page
 });
 
@@ -77,13 +80,13 @@ app.post('/interested', function(req,res) {  //from my submit in detail page we 
 
 //Destory
 app.delete('/interested/:id', function(req,res) { 
-  console.log("DELETE ROUTE");
+  // console.log("DELETE ROUTE");
   var id = Number(req.params.id); //When I click the button it sends the action to this app.delete Convert that id to number
-  console.log("This is id:" +id);
+  // console.log("This is id:" +id);
   moviesList.forEach(function(list) { //Goes through the moviesList array
-    console.log("This is list.id:" + list.id);
+    // console.log("This is list.id:" + list.id);
     if(list.id === id) {  //If i find the id which my button is associated with in the movieList array I want to remove that one
-      console.log("FOUND!!!!!!");
+      // console.log("FOUND!!!!!!");
       var index = moviesList.indexOf(list);//Removes movie from the list
       moviesList.splice(index,1);//Removes movie from the list
     }

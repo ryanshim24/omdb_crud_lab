@@ -65,6 +65,7 @@
           <h1>Movies I'm Interested In!</h1>
           <ul>
             <% interestMovies.forEach(function(list){ %>
+            <a href="/details/<%=list.imdbID%>">
               <li class="movie cf">
               <!-- Prints out the interested title name -->
                 <div class="title"><%=list.title%></div>
@@ -75,6 +76,7 @@
                   <button type="submit" class="btn btn-danger pull-right">Delete</button>
                 </form>
               </li>
+            </a>
             <% }); %>
           <% } %>
           </ul>

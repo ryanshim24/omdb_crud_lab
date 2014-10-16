@@ -7,6 +7,7 @@
   background-color: #222222;
   color: white; /*All the font color will be white  */
 }
+
 .sideBar .logoContainer {
   border-bottom: 1px solid #4E4E4E;
   padding: 26px 24px;
@@ -49,6 +50,7 @@
 .linkContainer a:hover {
   text-decoration: none;
 }
+
 
 
 /* CONTENT CSS */
@@ -162,6 +164,9 @@ ul { /* Resets given margins and padding */
 .page-header {
   margin-top:10;
 }
+
+
+
 
 .cf:before,
 .cf:after {
