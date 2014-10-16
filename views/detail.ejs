@@ -54,7 +54,8 @@
       
       <div class="results">
         <div class="detailContainer">
-          <% if (detailList.Poster != 'N/A') { %>
+          <!-- If Poster is Not Avaliable don't put out image -->
+          <% if (detailList.Poster != 'N/A') { %> ] 
               <img src="<%= detailList.Poster %>" alt="" style="float: right; height: 50%;">
           <% } %>
           <h1><%= detailList.Title%></h1>
@@ -72,7 +73,8 @@
           <p>Country: <%= detailList.Country%></p>
           <p>Awards: <%= detailList.Awards%></p>
           <p>Imdb Rating: <%= detailList.imdbRating%></p>
-
+          <!-- Submit button determines if I'm interested -->
+          <!-- If I am I take the value of the movie title so I can get it from the app.post -->
           <form action="/interested" method="POST">
             <input name="movie[title]" value="<%= detailList.Title%>" type="hidden">
            <button type="submit" class="btn btn-primary">I'm Interested!</button>

@@ -19,6 +19,7 @@
   </head>
 
   <body>
+  <!-- My Awesome Side bar Navi System -->
     <div class="sideBar"> 
       <div class="logoContainer">
         <div class="logo">
@@ -30,7 +31,7 @@
       </div>
       <div class="linkContainer">
         <ul>
-          <a href="/"><li>Home</li></a>
+          <a href="/" class="active"><li>Home</li></a>
           <a href="/interested"><li>Favorites</li></a>
           <a href="/contact"><li>Contact Me</li></a>
           <a href="/about"><li>About Me</li></a>
@@ -44,9 +45,10 @@
 
     <div class="content">
       <div class="searchBar">
-
+      <!-- form with the action Search goes to app.get /search  -->
         <form action="/search" method="GET">
-          <input type="text" name="movieTitle" placeholder="Search for other movie?" class="search"> <!-- Added searchTerm value -->
+          <!-- Sends name movieTitle we can pull this for info -->
+          <input type="text" name="movieTitle" placeholder="Search for movie?" class="search"> 
           <input type="submit" class="submit">
         </form>
     </div>

@@ -54,6 +54,7 @@
 
 
       <div class="results">
+      <!-- If there are no movies print out htis message -->
       <% if (interestMovies.length === 0){ %>
         <div class="noMovies text-center">
           <h1>No Movies in this directory just yet!</h1>
@@ -64,8 +65,12 @@
         <ul>
           <% interestMovies.forEach(function(list){ %>
             <li class="movie cf">
+            <!-- Prints out the interested title name -->
               <div class="title"><%=list.title%></div>
-              <form action="/interested/<%= list.id %>?_method=delete" method="post">
+              <!-- Pushes the delete button to the right -->
+              <!-- Overides post with delete -->
+              <form action="/interested/<%= list.id %>
+              ?_method=delete" method="post">
                 <button type="submit" class="btn btn-primary pull-right">Delete?</button>
               </form>
             </li>

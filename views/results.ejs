@@ -46,7 +46,7 @@
       <div class="searchBar">
 
         <form action="/search" method="GET">
-          <input type="text" name="movieTitle" value="<%= searchTerm %>" class="search"> <!-- Added searchTerm value -->
+          <input type="text" name="movieTitle" value="<%= searchTerm %>" class="search"> <!-- Added searchTerm value so it retains the searched value -->
           <input type="submit" class="submit">
         </form>
 
@@ -54,7 +54,10 @@
       
       <div class="results">
         <ul>
+          <!-- Goes through the movieList array -->
           <% movieList.forEach(function(list){ %>
+          <!-- Wrap list.imdbID so we can pull data for id api -->
+          <!-- When I click on this lnk it should take me to a more detailed page -->
             <a href="/details/<%=list.imdbID%>">
               <li class="movie cf">
                 <div class="title"><%= list.Title %></div>

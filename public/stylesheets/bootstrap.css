@@ -1,16 +1,18 @@
+/* My SIDEBAR CSS*/
+
 .sideBar {
-  width: 220px;
+  width: 220px; /*Sets the side bar width of 220px  */
   height: 100vh; /*Extends the height of the browser window.*/
-  float:left;
+  float:left; /* I'm pushing it left */
   background-color: #222222;
-  color: white;
+  color: white; /*All the font color will be white  */
 }
 .sideBar .logoContainer {
   border-bottom: 1px solid #4E4E4E;
   padding: 26px 24px;
 }
 
-.sideBar .logo {
+.sideBar .logo { /* Configuring the box of my logo */
   background-color: #646464;
   padding: 4px 8px;
   border-radius: 6px;
@@ -18,20 +20,20 @@
   display: inline-block;
 }
 
-.sideBar .appName {
+.sideBar .appName { /* Inline block so it sits next to logo */
   margin-left: 10px;
   font-size: 17px;
   display: inline-block;
 }
 
-.sideBar footer {
+.sideBar footer { /*Footer on the bottom keep it fixed  */
   position: fixed;
   bottom: 0;
   padding: 12px 24px;
   color: #999999;
 }
 
-.linkContainer li {
+.linkContainer li { 
   padding: 18px 24px;
   font-size: 22px;
 }
@@ -48,14 +50,17 @@
   text-decoration: none;
 }
 
-.content {
+
+/* CONTENT CSS */
+
+.content { /*Float left so it's attached to side bar*/
   float: left;
   width: calc(100% - 220px); /* This lets us extend the whole width of the browser minus the side bar*/
-  height: 100vh; 
+  height: 100vh; /* Extends height of the browser */
   overflow: auto;
 }
 
-form {
+form { /* Resets given margin for form*/
   margin:0;
 }
 
@@ -70,32 +75,35 @@ form {
 }
 
 .searchBar .search{
-  border-radius: 50px;
+  border-radius: 50px; /* Nice Circle Shade */
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
   padding: 5px 10px; /* Gives text input some space */
-  outline: none;
+  outline: none; /* Takes away highlighted outline */
 }
 
-.searchBar .submit {
+.searchBar .submit { /* So you can't see the submit button */
   display: none;
 }
 
-.results {
+.results { /*Your searchbar has a height of 81px so you want to start below it */
   margin-top: 81px;
 }
 
-ul {
+ul { /* Resets given margins and padding */
   margin: 0;
   padding: 0;
   list-style-type: none; /* Removes bullet points */
 }
 
+
+/* For the lists that come out in favorites and search page */
 .results li {
   border-bottom: 1px solid #CCCCCC;
   clear: both;
   padding: 24px;
 }
+/* flots the title left and floats the year right */
 .movie .title {
   float: left;
   font-size: 32px;
@@ -107,19 +115,21 @@ ul {
   color: #9b9b9b;
 }
 
+/* When I hover over the lists I get a nice hover for both favorites and search page */
 .results li:hover {
   background-color: #F0F0F0;
 }
 
 
-.detailContainer {
+.detailContainer { /* Give's it consistent padding */
   padding: 5px 24px;
 }
 
-.noMovies {
+.noMovies { /* In interested page give's it nice padding */
   padding-top: 20px;
 }
 
+/* Gives the nice background image for home page and nice text shadows  */
 .results .homePage {
   background: url('/images/tv.jpg');
   background-size: cover;
@@ -129,6 +139,8 @@ ul {
   padding: 145px;
 
 }
+
+/* Some css to readjust my static about and contact page */
 .results .contact{
   margin:0;
   width: calc(100% - 5px);
