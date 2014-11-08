@@ -105,14 +105,5 @@ app.get('/contact', function(req, res) { // My contact page
 });
 
 
-
-
-
-
-
-
-
-
-
-
 app.listen(3000);
+
